@@ -1,4 +1,9 @@
-<h1>Missed Movies</h1>
+<h1>Cinema Recap</h1>
 
 
-<form for
+<%= form_tag('/', method: 'get') do %>
+	<%= label_tag(:search, 'Who are you catching up on?') %><br>
+	<%= text_field_tag(:search) %>
+	<%= select_tag(:role, options_for_select([["Actor", "Actor"], ["Director", "Director"], ["Screenwriter", "Screenwriter"], ["Composer", "Composer"]])) %>
+	<%= submit_tag 'Search' %> 
+<% end %>
